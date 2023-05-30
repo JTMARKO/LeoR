@@ -4,12 +4,12 @@
 
 using namespace std;
 
-
 int main()
 {
-    Vector3 pos(1, 1, 1);
+    Vector3 v1 = {1, 1, 1};
+    Vector3 v2 = {-1, 1, 1};
 
-    float a = dot(pos, pos);
+    float a = dot(v1, v2);
 
     cout << a << endl;
 }
