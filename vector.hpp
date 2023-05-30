@@ -23,11 +23,6 @@ public:
     float magnitude();
 };
 
-float Vector3::magnitude()
-{
-    const float squared_sum = x * x + y * y + z * z;
-
-}
 
 /**
  * Calulates the dot product between two Vector3 objects
@@ -35,10 +30,4 @@ float Vector3::magnitude()
  * @param v1, v2 two Vector3 objects to dot
  * @returns float representing the dot product of two vectors
  */
-float dot(Vector3 v1, Vector3 v2)
-{
-    const float product = v1.x * v2.x + v1.y * v2.y + v1.z * v2.z;
-    const float normalizer = v1.magnitude() * v2.magnitude();
-
-    return product / normalizer;
-}
+float dot(Vector3 v1, Vector3 v2) ;
