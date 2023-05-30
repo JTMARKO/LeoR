@@ -11,7 +11,7 @@ float magnitude(Vector3 v)
 float dot(Vector3 v1, Vector3 v2)
 {
     const float product = v1.x * v2.x + v1.y * v2.y + v1.z * v2.z;
-    const float normalizer = magnitude(v1) * magnitude(v1);
+    const float normalizer = magnitude(v1) * magnitude(v2);
 
     return product / normalizer;
 }
