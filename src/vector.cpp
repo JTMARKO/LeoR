@@ -1,5 +1,5 @@
 #include <cmath>
-#include "vector.hpp"
+#include "../include/vector.hpp"
 
 float Vector3::magnitude()
 {
