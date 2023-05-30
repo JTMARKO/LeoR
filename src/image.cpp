@@ -1,20 +1,37 @@
 #include <iostream>
 #include "../include/image.hpp"
 
-Pixel get_pixel(Image image, int x, int y)
+Image *createImage(int width, int height)
 {
-    const int index = image.width * y + x;
+    Image *image = new Image;
 
-    return image.pixels[index];
+    image->width = width;
+    image->height = height;
+    image->pixels = new Pixel[width * height];
+
+    return image;
 }
 
-void set_pixel(Image *image, int x, int y, Pixel pixel)
+void destroyImage(Image *image)
+{
+    delete[] image->pixels;
+    delete image;
+}
+
+Pixel getPixel(Image *image, int x, int y)
+{
+    const int index = image->width * y + x;
+
+    return image->pixels[index];
+}
+
+void setPixel(Image *image, int x, int y, Pixel pixel)
 {
     const int index = image->width * y + x;
 
     image->pixels[index] = pixel;
 }
 
-void image_to_ppm(Image image)
+void imageToPpm(Image image)
 {
 }
