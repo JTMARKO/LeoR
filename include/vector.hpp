@@ -1,5 +1,4 @@
-#include <stdio.h>
-
+//Simple struct representing a 3-dim vector
 struct Vector3
 {
     float x, y, z;

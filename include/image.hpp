@@ -38,7 +38,8 @@ Pixel getPixel(Image *image, int x, int y);
  * Changes the pixel of a given index
  *
  * @param image the image to be changed
- * @param x, y the x, y index of the pixel, where (0, 0) is bottom left
+ * @param x the x index of the pixel, where (0, 0) is bottom left
+ * @param y the y index of the pixel, where (0, 0) is bottom left
  * @param pixel a Pixel object which will update the pixel
  */
 void setPixel(Image *image, int x, int y, Pixel pixel);
