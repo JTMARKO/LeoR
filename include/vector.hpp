@@ -16,7 +16,7 @@ struct Ray3
  * @param v1, v2 two Vector3 structs to dot
  * @returns float representing the dot product of two vectors
  */
-float dot(Vector3 v1, Vector3 v2);
+float dot(Vector3 *v1, Vector3 *v2);
 
 /**
  * Calculates and returns the magnitude of the given vector
@@ -24,7 +24,7 @@ float dot(Vector3 v1, Vector3 v2);
  * @param v vector which magnitude is to be returned
  * @returns float representing the magnitude of the vector
  */
-float magnitude(Vector3 v);
+float magnitude(Vector3 *v);
 
 /**
  * Calculates a new, rotated vector around an axis
