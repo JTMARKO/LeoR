@@ -11,7 +11,7 @@ int main()
     struct Vector3 v1 = {1, 1, 1};
     struct Vector3 v2 = {-1, 1, 1};
 
-    float a = dot(v1, v2);
+    float a = dot(&v1, &v2);
 
     struct Pixel p1 = {255, 255, 123};
 
