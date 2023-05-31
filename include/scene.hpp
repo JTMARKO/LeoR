@@ -37,7 +37,7 @@ public:
 
     /**
      * Makes a semi-random ray after colliding with the sphere
-     * 
+     *
      * @param ray ray struct to be collided
      * @returns a Ray3 pointer to a struct which contains the next traced ray
      */
@@ -86,5 +86,13 @@ private:
      */
     void traceAllRays();
 
-    Pixel traceRay(int x, int y);
+    /**
+     * Traces a ray in the scene then returns an associated color
+     * 
+     * @param x the x coordinate of the ray on the image projection plane
+     * @param y the y coordinate of the ray on the image projection plane
+     * @param maxBounce the maximum number of bounces that a ray can take
+     * @returns A pixel color associated with the traced ray
+     */
+    Pixel traceRay(int x, int y, int maxBounce);
 };
