@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// Circle class right now
+// Sphere class right now
 class SceneObject
 {
     Vector3 position;
@@ -15,7 +15,33 @@ class SceneObject
     Vector3 color;
 
 public:
-    SceneObject(Vector3 position, float startRadius, Vector3 color, float startRoughness, float startEmissivity);
+    /**
+     * Constructs a new SceneObject (sphere)
+     *
+     * @param position origin of the SceneObject
+     * @param startRadius radius of the sphere
+     * @param color RGB color of the sphere in Pixel
+     * @param startRoughness roughness of the sphere
+     * @param startEmissivity emissivity of the sphere
+     */
+    SceneObject(Vector3 *position, float startRadius, Pixel *color,
+                float startRoughness, float startEmissivity);
+
+    /**
+     * Checks for collision between a vector and the sphere
+     *
+     * @param ray ray struct to be checked for collision
+     * @returns true iff there exists a collision between the ray and sphere
+     */
+    bool didCollide(Ray3 *ray);
+
+    /**
+     * Makes a semi-random ray after colliding with the sphere
+     * 
+     * @param ray ray struct to be collided
+     * @returns a Ray3 pointer to a struct which contains the next traced ray
+     */
+    Ray3 *nextRayAfterCollision(Ray3 *ray);
 };
 
 // Large wrapper class for rendering/collision
@@ -37,7 +63,7 @@ public:
      * @param startWidth width in pixels of the scene render
      * @param startHeight height in pixels of the scene render
      */
-    Scene(Ray3 startCamera, float startFov = 1.22173, int startWidth = 300, int startHeight = 200);
+    Scene(Ray3 *startCamera, float startFov = 1.22173, int startWidth = 300, int startHeight = 200);
 
     /**
      * Adds a new object to the scene
