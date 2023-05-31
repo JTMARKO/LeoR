@@ -15,10 +15,10 @@ int main()
 
     struct Pixel p1 = {255, 255, 123};
 
-    Image *img = createImage(2, 2);
+    // Image *img = createImage(2, 2);
 
-    setPixel(img, 0, 0, p1);
+    // setPixel(img, 0, 0, p1);
 
     // cout << p1.blue << endl;
-    cout << getPixel(img, 0, 0).red << " " << getPixel(img, 0, 0).green << " " << getPixel(img, 0, 0).blue << endl;
+    // cout << getPixel(img, 0, 0).red << " " << getPixel(img, 0, 0).green << " " << getPixel(img, 0, 0).blue << endl;
 }
