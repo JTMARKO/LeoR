@@ -1,5 +1,9 @@
 #include <iostream>
+#include <fstream>
+#include <cstdlib>
 #include "../include/image.hpp"
+
+using namespace std;
 
 Image *createImage(int width, int height)
 {
@@ -32,6 +36,28 @@ void setPixel(Image *image, int x, int y, Pixel pixel)
     image->pixels[index] = pixel;
 }
 
-void imageToPpm(Image image)
+void imageToPpm(Image imageStruct)
 {
+    ofstream image;
+    image.open("render.ppm");
+
+    if (image.is_open()) {
+        // place header info
+
+        image << "P3" << endl;
+        image << imageStruct.width << " " << imageStruct.height << endl;
+        image << "255" << endl;
+
+        for (int i = 0; i < imageStruct.width * imageStruct.height; i++) {
+
+            const Pixel currentPixel = imageStruct.pixels[i];
+
+            image << currentPixel.red << " " << currentPixel.green << currentPixel.blue << " " << endl;
+        }
+
+
+    }
+
+
+
 }
